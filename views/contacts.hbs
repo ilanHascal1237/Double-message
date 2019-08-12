@@ -1,0 +1,40 @@
+<head>
+
+    <Style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            width: auto;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+    </Style>
+</head>
+
+<div class="form-group">
+    <a class="btn btn-primary" href='/logout'>Logout</a>
+</div>
+
+<h3> Contacts</h3>
+
+<table>
+    <tr>
+        <th> <strong>Contacts</strong></th>
+    </tr>
+    {{#each Contacts}}
+    <tr>
+        <!-- THIS IS THE FORMAT FOR A NEW ROW PER CONTACT -->
+        <th> {{name}} {{phone}} </th>
+        <td> <a class="sendText" href="/messages/send/{{_id}}"> Send text </a></td>
+        <td> <a class="viewMessage" href="/messages/{{_id}}"> View messages </a></td>
+        <td> <a class="editContact" href="/contacts/{{_id}}"> Edit contact </a></td>
+    </tr>
+    {{/each}}
+</table>
+
+
+<div class="form-group">
+    <a class="btn btn-primary" href="/contacts/new"> Add contact</a>
+    <a class="btn btn-primary" href="/messages"> View all messages</a>
+</div>

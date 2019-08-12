@@ -1,0 +1,13 @@
+<h1> Write a message.....</h1>
+
+<form method="POST">
+    <div class="form-group">
+        <textarea id="messageBox" rows="5" cols="5" name="message" placeholder="Message contents..."
+            class="form-control"></textarea>
+
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success">Send {{contact.name}} Message ({{contact.phone}})</button>
+        <a href="/contacts" class="btn btn-primary"> Go back</a>
+    </div>
+</form>

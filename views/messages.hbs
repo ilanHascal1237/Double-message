@@ -1,0 +1,31 @@
+<head>
+    <Style>
+        .messageCard {
+            border: 5px solid black;
+            border-radius: 25px;
+        }
+    </Style>
+
+</head>
+
+
+
+
+
+{{#unless allMessages}}
+<h2>Your conversation with {{name}} </h2>
+{{else}}
+<h2> All Messages </h2>
+{{/unless}}
+<div class="userMessageThread" style="width:100%">
+    {{#each Messages}}
+    <div class="messageCard" {{#if isSent}}style="width: 50%;float: right; clear: both"
+        {{else}}style="width: 50%;float: left; clear: both" {{/if}}>
+        <h5 class="messageTitle" style="color:gray">{{#if isSent}} Sent to {{else}} From {{/if}} {{contact.name}}
+            via
+            {{channel}}: {{created}} </h5>
+        <h6 class="messageContent"> {{content}}</h6>
+    </div>
+    {{/each}}
+</div>
+<a href="/contacts"> Back to contacts</a>
